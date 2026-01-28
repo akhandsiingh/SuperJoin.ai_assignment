@@ -22,44 +22,6 @@ This project uses **pure JavaScript** with the following stack:
 ### Google Integration
 - **Google Apps Script** - Pure JavaScript that runs in Google's environment
 
-## Project Structure
-
-```
-/
-├── backend/                    # Node.js + Express server
-│   ├── config/
-│   │   └── database.js        # MySQL connection (pure JS)
-│   ├── routes/                # API endpoints (pure JS)
-│   │   ├── sync.js
-│   │   ├── sheetWebhook.js
-│   │   └── dbWebhook.js
-│   ├── services/
-│   │   └── syncEngine.js      # Sync logic (pure JS)
-│   ├── server.js              # Express app entry point
-│   ├── schema.sql             # Database setup
-│   ├── .env                   # Environment variables
-│   └── package.json           # Node dependencies
-│
-├── frontend/                   # React + Vite frontend
-│   ├── src/
-│   │   ├── App.js             # Main React component
-│   │   ├── index.js           # React entry point
-│   │   ├── components/        # React components (all .js)
-│   │   │   ├── DataTable.js
-│   │   │   ├── ConflictLog.js
-│   │   │   ├── WebhookLog.js
-│   │   │   └── SyncStatus.js
-│   │   └── *.css              # Component styles
-│   ├── public/
-│   │   └── index.html         # HTML entry point
-│   ├── vite.config.js         # Vite configuration
-│   ├── .env                   # API URL config
-│   └── package.json           # React dependencies
-│
-└── README.md                  # Full documentation
-
-```
-
 ## Installation & Running
 
 ### 1. Backend Setup
@@ -98,14 +60,6 @@ npm run dev
 ```
 
 Frontend automatically proxies to backend via Vite's proxy config.
-
-## Key Features - All Pure JavaScript
-
-✅ **No TypeScript** - Everything is plain JavaScript (.js files)
-✅ **No Next.js** - React with Vite instead
-✅ **No JSX compilation headaches** - Simple, straightforward code
-✅ **Fast development** - Vite provides instant HMR
-✅ **Lightweight** - No bloated frameworks
 
 ## Running Both Simultaneously
 
@@ -197,12 +151,3 @@ SELECT * FROM sync_conflicts WHERE resolved_at IS NULL;
 SELECT * FROM change_log LIMIT 10;
 ```
 
-## No TypeScript - Pure JavaScript Benefits
-
-- ✅ Simpler codebase - no type annotations to write
-- ✅ Faster development - no build step for backend
-- ✅ Easy to modify - edit files and see changes immediately
-- ✅ Lightweight - minimal dependencies
-- ✅ Production ready - all code is standard JavaScript
-
-That's it! Pure JavaScript all the way down. 🚀
